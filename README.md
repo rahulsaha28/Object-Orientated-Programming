@@ -20,16 +20,18 @@
 	So OOP is just think like everything is Object.
 
 An object has two characteristics
+
 	
-	* attributes 
-	* behavior
+	*  attributes 
+	*  behavior
 
 let's take an example
 
 if Parrot is an Object
+
 	
-	* name,age,color are attributes
-	* singing,dancing are behavior
+	*  name,age,color are attributes
+	*  singing,dancing are behavior
 
 In Python the concept of OOP follows some basic principles:
 
