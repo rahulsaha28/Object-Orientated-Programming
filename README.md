@@ -22,22 +22,24 @@
 An object has two characteristics
 
 	
-	*  attributes 
-	*  behavior
+*  attributes 
+*  behavior
 
 let's take an example
 
 if Parrot is an Object
 
 	
-	*  name,age,color are attributes
-	*  singing,dancing are behavior
+*  name,age,color are attributes
+*  singing,dancing are behavior
 
 In Python the concept of OOP follows some basic principles:
 
  ------------------------------------------------------------------------------------------------
-| Inheritance   | A process of using details from a new class without modifying existing class   |
-| Encapsulation | Hiding the private details of a class from other objects.                      |
-| Polymorphism  | A concept of using common operation in different ways for different data input |
+ 
+ `Inheritance` -----> A process of using details from a new class without modifying existing class   
+ `Encapsulation` -----> Hiding the private details of a class from other objects.                      
+ `Polymorphism`  ------> A concept of using common operation in different ways for different data input
+ 
  ------------------------------------------------------------------------------------------------
 
