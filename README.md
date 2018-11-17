@@ -76,6 +76,7 @@ Here, `obj` is the object of class `Parrot`.
 
 ## Example 1: Creating Class and Object in Python
 ```Python
+
 # this is the Parrot class
 class Parrot:
 
@@ -131,6 +132,7 @@ Inheritance is a way of creating new class for using details of existing class w
 The new formed class is called `child class` . Similarly the existing class is a `parent class`.
 
 ## Example 3: Use of Inheritance in Python
+```Python
 # this is the parent class
 class Parrot:
 
@@ -145,7 +147,7 @@ class Parrot:
         print("It is a {}".format(self.species));
 
 # this is the child class
-```Python
+
 class Penguin(Parrot):
 
     def __init__(self, name, age):
