@@ -74,4 +74,23 @@ obj = Parrot()
 ```
 Here, `obj` is the object of class `Parrot`.	
 
+## Example 1: Creating Class and Object in Python
+```Python
+# this is the Parrot class
+class Parrot:
+
+    # class attribute
+    species = "Bird";
+
+    # instance attribute
+    def __init__(self, name, age):
+        self.name = name;
+        self.age = age;
+
+
+# instantiate  the Parrot class ( this is the two object)
+b1 = Parrot("bb1", 20);
+b2 = Parrot("bb2", 30);
+```
+
 
