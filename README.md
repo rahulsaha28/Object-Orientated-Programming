@@ -42,4 +42,23 @@ In Python the concept of OOP follows some basic principles:
  `Polymorphism`  ------> A concept of using common operation in different ways for different data input
  
  ------------------------------------------------------------------------------------------------
+ 
+ 
+### Class:
+	A class is a blueprint for Object.
+
+We can think of class as an sketch of a parrot with labels. It contains all the details about parrot.
+
+The example for class of Parrot can be:
+
+```Python
+class Parrot:
+	pass
+```
+here, `class` keyword use to define an empty class of Parrot.
+Using class we construct Object (sometime call instance of class)
+
+## Instance:
+	An instance is a specific object created from a particular class.
+
 
