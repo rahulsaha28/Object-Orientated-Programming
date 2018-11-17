@@ -104,7 +104,7 @@ print("{} is {} years old".format(b1.name, b1.age));
 	
 ## Example 2 : Creating Methods in Python
 ```Python
-# this is the Parrot class
+
 class Parrot:
 
 
@@ -118,7 +118,7 @@ class Parrot:
         print("{} is {} years old.".format(self.name, self.age));
 
 
-# instantiate  the Parrot class ( this is the two object)
+
 b1 = Parrot("bb1", 20);
 b2 = Parrot("bb2", 30);
 
@@ -128,4 +128,4 @@ b1.about();
 
 ### Inheritance
 Inheritance is a way of creating new class for using details of existing class without modifying it. 
-The new formed class is called `child class` . Similarly the existing class is a `child class`.
+The new formed class is called `child class` . Similarly the existing class is a `parent class`.
