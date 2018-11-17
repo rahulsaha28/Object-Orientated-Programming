@@ -99,5 +99,30 @@ print("{}".format(b1.species));
 print("{} is {} years old".format(b1.name, b1.age));
 
 ```
+### Methods:
+	Methods are functions defined inside the body of a class. They are used to defined the behaviors of an object.
+	
+## Example 2 : Creating Methods in Python
+```Python
+# this is the Parrot class
+class Parrot:
 
+
+    # instance attribute
+    def __init__(self, name, age):
+        self.name = name;
+        self.age = age;
+
+    # instance method
+    def about(self):
+        print("{} is {} years old.".format(self.name, self.age));
+
+
+# instantiate  the Parrot class ( this is the two object)
+b1 = Parrot("bb1", 20);
+b2 = Parrot("bb2", 30);
+
+# calling instance method
+b1.about();
+```
 
