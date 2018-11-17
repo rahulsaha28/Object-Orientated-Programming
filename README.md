@@ -163,3 +163,38 @@ d1 = Penguin("Penguin", 30);
 
 d1.WhoIsIt();
 ```
+
+### Encapsulation:
+Using OOP in Python, we can restrict access to methods and variables. This prevent data from direct 
+modification which is called encapsulation. In python, we denote private attribute using double underscore as prefix 
+i.e "__" 
+
+```Python
+
+class Computer:
+    def __init__(self):
+        self.__max_price = 90000
+
+    def sell(self):
+        print("Selling price is {}".format(self.__max_price));
+
+    def setPrice(self, amount):
+        self.__max_price = amount;
+
+
+
+dell = Computer();
+
+print(dell.__max_price);
+```
+if I run this programm I got an error. Which is
+	C:\Python3\python.exe C:/Users/PI-SERIES/Desktop/cPython/OOP.py
+	Traceback (most recent call last):
+ 	 File "C:/Users/PI-SERIES/Desktop/cPython/OOP.py", line 15, in <module>
+   	 print(dell.__max_price);
+	AttributeError: 'Computer' object has no attribute '__max_price'
+
+	Process finished with exit code 1
+	
+Here it tell us that `Computer` object has no attribute `__max_price`. Thats mean we can not access attribute `__max_price`.
+Because it is a private attribute.
