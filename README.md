@@ -60,5 +60,18 @@ Using class we construct Object (sometime call instance of class)
 
 ## Instance:
 	An instance is a specific object created from a particular class.
+	
+### Object:
+	An object(instance) is an instantiation of a class. When class is defined, only the description for
+	the object is defined. Therefore no memory or storage is allocated.
+
+The example for object of parrot class can be:
+
+```Python
+
+obj = Parrot()
+
+```
+Here, `obj` is the object of class `Parrot`.	
 
 
