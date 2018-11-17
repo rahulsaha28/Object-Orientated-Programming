@@ -129,3 +129,33 @@ b1.about();
 ### Inheritance
 Inheritance is a way of creating new class for using details of existing class without modifying it. 
 The new formed class is called `child class` . Similarly the existing class is a `parent class`.
+
+## Example 3: Use of Inheritance in Python
+# this is the parent class
+class Parrot:
+
+    species = "Bird"
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+    def WhoIsIt(self):
+        print("It is a {}".format(self.species));
+
+# this is the child class
+class Penguin(Parrot):
+
+    def __init__(self, name, age):
+        # call super() function
+        # Inherit all thing from Parrot
+        super().__init__(name, age);
+
+    def WhoIsIt(self):
+        print("Penguin");
+
+
+d1 = Penguin("Penguin", 30);
+
+d1.WhoIsIt();
