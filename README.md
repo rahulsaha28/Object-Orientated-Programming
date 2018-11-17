@@ -127,5 +127,5 @@ b1.about();
 ```
 
 ### Inheritance
-	Inheritance is a way of creating new class for using details of existing class without modifying it. 
-	The new formed class is called `child class` . Similarly the existing class is a `child class`.
+Inheritance is a way of creating new class for using details of existing class without modifying it. 
+The new formed class is called `child class` . Similarly the existing class is a `child class`.
