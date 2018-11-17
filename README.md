@@ -91,6 +91,13 @@ class Parrot:
 # instantiate  the Parrot class ( this is the two object)
 b1 = Parrot("bb1", 20);
 b2 = Parrot("bb2", 30);
+
+# access the class attribute
+print("{}".format(b1.species));
+
+# access the instance attribute of a class
+print("{} is {} years old".format(b1.name, b1.age));
+
 ```
 
 
