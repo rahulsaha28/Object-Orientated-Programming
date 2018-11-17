@@ -188,6 +188,7 @@ dell = Computer();
 print(dell.__max_price);
 ```
 if I run this programm I got an error. Which is
+	
 	C:\Python3\python.exe C:/Users/PI-SERIES/Desktop/cPython/OOP.py
 	Traceback (most recent call last):
  	 File "C:/Users/PI-SERIES/Desktop/cPython/OOP.py", line 15, in <module>
