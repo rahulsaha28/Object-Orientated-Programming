@@ -145,6 +145,7 @@ class Parrot:
         print("It is a {}".format(self.species));
 
 # this is the child class
+```Python
 class Penguin(Parrot):
 
     def __init__(self, name, age):
@@ -159,3 +160,4 @@ class Penguin(Parrot):
 d1 = Penguin("Penguin", 30);
 
 d1.WhoIsIt();
+```
