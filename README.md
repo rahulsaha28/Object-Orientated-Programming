@@ -225,7 +225,9 @@ Output:
 
 Here the `print()` is a method which work  in different way depend on the `input data type`.
 
-For int input data (int) the first print function `multiply the two number`.
+```css
+For int input data (int) the first print function <style="color:red">multiply the two number.
 But for string input data (string) the second print function `print the string in multiple time`.
 
 So the `print` function change it's work depend on the input data type.
+```
