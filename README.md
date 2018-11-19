@@ -207,3 +207,18 @@ Polymorphism simply means that we can call the same method name with parameters,
 do different things.
 
 `In OOP style` Polymorphism is an ability to use common interface for multiple data types.
+
+If we see the code below we understand it clearly
+
+```Python
+
+print(5 * 6);
+
+print("RAHUL" * 5);
+```
+
+Output:
+	30
+	RAHULRAHULRAHULRAHULRAHUL
+
+Here the `print()` is a method which work  in different way depend on the `input data type`.
