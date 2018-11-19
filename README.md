@@ -218,7 +218,9 @@ print("RAHUL" * 5);
 ```
 
 Output:
+	
 	30
+	
 	RAHULRAHULRAHULRAHULRAHUL
 
 Here the `print()` is a method which work  in different way depend on the `input data type`.
