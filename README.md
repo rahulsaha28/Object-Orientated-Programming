@@ -202,7 +202,7 @@ Because it is a private attribute.
 
 
 ### Polymorphism:
-```github
+```p5
 Polymorphism simply means that we can call the same method name with parameters, and depending on the parameters, it will
 do different things.
 ```
