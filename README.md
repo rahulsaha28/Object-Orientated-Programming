@@ -202,8 +202,8 @@ Because it is a private attribute.
 
 
 ### Polymorphism:
-```
+
 Polymorphism simply means that we can call the same method name with parameters, and depending on the parameters, it will
 do different things.
-```
+
 `In OOP style` Polymorphism is an ability to use common interface for multiple data types.
