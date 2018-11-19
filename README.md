@@ -199,3 +199,10 @@ if I run this programm I got an error. Which is
 	
 Here it tell us that `Computer` object has no attribute `__max_price`. Thats mean we can not access attribute `__max_price`.
 Because it is a private attribute.
+
+
+### Polymorphism:
+Polymorphism simply means that we can call the same method name with parameters, and depending on the parameters, it will
+do different things.
+
+`In OOP style` Polymorphism is an ability to use common interface for multiple data types.
