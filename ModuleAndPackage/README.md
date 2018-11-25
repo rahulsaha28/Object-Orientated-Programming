@@ -29,3 +29,17 @@ a = [1,3,5,6,8,12,45];
 
 print(my_module.findIndex(a, 6));
 ```
+We also use as
+```python
+import my_module as np
+
+```
+We also write as
+
+```python
+from my_module import findIndex;
+
+a = [1,3,5,6,8,12,45];
+
+print(findIndex(a, 6));
+```
