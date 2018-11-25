@@ -34,7 +34,7 @@ We also use as
 import my_module as np
 
 ```
-We also write as
+We also write as ( here we only import the `findIndex` function from `my_module.py` module )
 
 ```python
 from my_module import findIndex;
