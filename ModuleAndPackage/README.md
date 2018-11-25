@@ -43,3 +43,27 @@ a = [1,3,5,6,8,12,45];
 
 print(findIndex(a, 6));
 ```
+
+But how to find it the path of the module?
+
+It actually find using the following module `sys` 
+
+```python
+import sys;
+
+from my_module import findIndex;
+
+a = [1,3,5,6,8,12,45];
+
+print(findIndex(a, 6));
+
+print(sys.path);
+
+```
+
+## Output:
+
+	RAHUL SAHA
+	3
+	['C:\\Users\\PI\\Desktop\\PyPro', 'C:\\Users\\PI\\Desktop\\PyPro', 'C:\\Python3\\python37.zip', 'C:\\Python3\\DLLs', 'C:\\Python3\\lib', 'C:\\Python3', 'C:\\Python3\\lib\\site-packages']
+
