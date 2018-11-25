@@ -231,3 +231,16 @@ But for string input data (string) the second print function `print the string i
 
 So the `print` function change it's work depend on the input data type.
 
+
+![capture](https://user-images.githubusercontent.com/22681747/48983186-ea299100-f115-11e8-90b3-25c74eda3fb4.PNG)
+But if we shift the my_module.py into the folder project2 (like the picture) and write the same code we get an error.
+
+### The error is:
+
+```python
+Traceback (most recent call last):
+  File "C:/Users/PI/Desktop/PyPro/project.py", line 1, in <module>
+    from my_module import findIndex;
+ModuleNotFoundError: No module named 'my_module'
+```
+
