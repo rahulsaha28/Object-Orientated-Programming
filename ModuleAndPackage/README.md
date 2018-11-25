@@ -82,3 +82,20 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'my_module'
 ```
 
+
+
+## Packages
+
+A package is a hierarchical file directory structure that defines a single Python application environment
+that consists of modules and subpackages and sub-subpackages and so on
+
+Consider a file `Pots.py` available in `Phone` directory
+
+Here `Phone` is the package name;
+
+we access module from a package  writting following code:
+
+```python
+
+from Phone.Pots import *;
+``` 
