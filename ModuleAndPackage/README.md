@@ -18,3 +18,14 @@ and two `.py` file that are the module in this case.
 
 * my_module.py
 * project.py 
+
+
+we can access the my_module.py in project.py using this code
+
+```python
+import my_module
+
+a = [1,3,5,6,8,12,45];
+
+print(my_module.findIndex(a, 6));
+```
