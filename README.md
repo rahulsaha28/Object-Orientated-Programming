@@ -1,234 +1,542 @@
-# Object-Orientated-Programming
-[python](https://www.programiz.com/python-programming/object-oriented-programming)
-## Table of Contents
+## Regular Expression
 
-* Introduction to OOP in Python
-* Class
-* Object
-* Methods
-* Inheritance
-* Encapsulation
-* Polymorphism
-* Key Point to Remember
------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------
 
-### Object
-          Object are basically data in Python. So every object in Python represent a data. So every object in Python 
-          has a data type.
-### OOP
-	So OOP is just think like everything is Object.
+In python there is a build in module which is called `re module`
 
-An object has two characteristics
+if we search any character like this
 
-	
-*  attributes 
-*  behavior
+1. qwertyuiopasdfghjklzxcvbnm
+2. QWERTYUIOPASDFGHJKLZXCVBNM
+3. 1234567890
+4. ha haha
+5. ! @ # $ % ^ & * ( ) . ? / | \
+6. 234345-67890
+7. 127.000.001
 
-let's take an example
+Metacharacters ( Need to be scape ):
 
-if Parrot is an Object
+. & ! ^ * ( ) | ? / \ { } [ ]
 
-	
-*  name,age,color are attributes
-*  singing,dancing are behavior
 
-In Python the concept of OOP follows some basic principles:
 
- ------------------------------------------------------------------------------------------------
- 
- `Inheritance` -----> A process of using details from a new class without modifying existing class   
- `Encapsulation` -----> Hiding the private details of a class from other objects.                      
- `Polymorphism`  ------> A concept of using common operation in different ways for different data input
- 
- ------------------------------------------------------------------------------------------------
- 
- 
-### Class:
-	A class is a blueprint for Object.
+>> Raw String
 
-We can think of class as an sketch of a parrot with labels. It contains all the details about parrot.
+The `backslash( \ )` character is used to escape 
+characters that otherwise have a special meaning
+. such as newline, backslash itself or the quote
+character. String literals may optionally be prefixed 
+with a litter `r` or `R` such strings are called row strings
+and use different rules for backslash escape sequences.  
 
-The example for class of Parrot can be:
 
-```Python
-class Parrot:
-	pass
+````Python
+import re;
+
+'''
+    find the different between the two print
+    output
+'''
+
+print('\ntab');
+print(R'\ntab');
+
+'''
+    find a pattern using the build in function of 
+    the re module 
+'''
+
+pattern  = re.compile(r'abc');
+
+text = 'ababnmupabcvrtfindapatternusingthebuildinfunctionof';
+
+text2 = pattern.finditer(text);
+
+for match in text2:
+    print(match);
+
+# we can see the pattern of the text by the form
+print(text[8:11])
+
+````
+
+
+
+>> find the website like www.facebook.com
+
+
+Code is here 
+
+````Python
+import re
+
+txt = 'abgulamobabaccabnonopapawww.facebook.com';
+
+
+pattern = re.compile(r'www\.facebook\.com');
+
+result = pattern.finditer(txt);
+
+for res in result:
+    print(res);
+
+````
+
+>> Regular expression
+
+|   Signal |            Exp    |
+|:--------:|:----------------:|
+| \d  |    -Digit(0-9)       |
+|               |              |
+| \D   |   -Not a Digit(0-9)  |
+|       |                      |
+|\w   |   -Word Character(a-z, A-Z, 0-9_)|
+|     |                                   |
+|\W     | -Not a Word Character|
+|       |                       |
+|\s    |  -white space (space, tab, newline)|
+|       |                           |  
+|\S      |-Not Whitespace|
+|       |                   |
+|\b      |-Word Boundary|
+|       |               |
+|\B      |-not a Word Boundary|
+|          |                |
+|^       |-beginning of a string|
+|       |                       |
+|$       |-end of the string|
+|           |                   |
+|[]      |-matches character in the bracket|
+|       |                                   |
+|[^ ]    |-matches character not in  bracket|
+|       |                                   |
+| \     |  -either or                       |
+|( )    |   -group                              |
+
+
+
+
+
+````Python
+import re
+
+txt = '123abcvertcyuort';
+
+pattern = re.compile('\d');
+
+match = pattern.finditer(txt);
+
+for m in match:
+
+    print(m);
+````
+
+
+````Python
+import re
+
+txt = '123abc vert cyuo rt';
+
+'''
+    Word boundary that is start with space or initial value of the sentence
+'''
+
+pattern = re.compile(r'\bab');
+
+match = pattern.finditer(txt);
+
+for m in match:
+
+    print(m);
+````
+
+````Python
+import re
+
+txt = 'a123abc vert cyuo rt';
+
+'''
+    Word boundary that is start with space or initial value of the sentence
+'''
+
+pattern = re.compile(r'^a');
+
+match = pattern.finditer(txt);
+
+for m in match:
+
+    print(m);
+````
+
+
+````Python
+import re
+
+txt = 'a123abc vert cyuo rt';
+
+pattern = re.compile(r'rt$');
+
+match = pattern.finditer(txt);
+
+for m in match:
+
+    print(m);
+````
+
+>> May be Different
+
+````Python
+import re
+
+ip = '127.002.001';
+
+
+pattern = re.compile(r'\d\d\d');
+
+match = pattern.finditer(ip);
+
+for m in match:
+
+    print(m);
+````
+
+Output of the code: 
+
 ```
-here, `class` keyword use to define an empty class of Parrot.
-Using class we construct Object (sometime call instance of class)
-
-## Instance:
-	An instance is a specific object created from a particular class.
-	
-### Object:
-	An object(instance) is an instantiation of a class. When class is defined, only the description for
-	the object is defined. Therefore no memory or storage is allocated.
-
-The example for object of parrot class can be:
-
-```Python
-
-obj = Parrot()
-
-```
-Here, `obj` is the object of class `Parrot`.	
-
-## Example 1: Creating Class and Object in Python
-```Python
-
-# this is the Parrot class
-class Parrot:
-
-    # class attribute
-    species = "Bird";
-
-    # instance attribute
-    def __init__(self, name, age):
-        self.name = name;
-        self.age = age;
-
-
-# instantiate  the Parrot class ( this is the two object)
-b1 = Parrot("bb1", 20);
-b2 = Parrot("bb2", 30);
-
-# access the class attribute
-print("{}".format(b1.species));
-
-# access the instance attribute of a class
-print("{} is {} years old".format(b1.name, b1.age));
-
-```
-### Methods:
-	Methods are functions defined inside the body of a class. They are used to defined the behaviors of an object.
-	
-## Example 2 : Creating Methods in Python
-```Python
-
-class Parrot:
-
-
-    # instance attribute
-    def __init__(self, name, age):
-        self.name = name;
-        self.age = age;
-
-    # instance method
-    def about(self):
-        print("{} is {} years old.".format(self.name, self.age));
-
-
-
-b1 = Parrot("bb1", 20);
-b2 = Parrot("bb2", 30);
-
-# calling instance method
-b1.about();
-```
-
-### Inheritance
-Inheritance is a way of creating new class for using details of existing class without modifying it. 
-The new formed class is called `child class` . Similarly the existing class is a `parent class`.
-
-## Example 3: Use of Inheritance in Python
-```Python
-# this is the parent class
-class Parrot:
-
-    species = "Bird"
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-
-    def WhoIsIt(self):
-        print("It is a {}".format(self.species));
-
-# this is the child class
-
-class Penguin(Parrot):
-
-    def __init__(self, name, age):
-        # call super() function
-        # Inherit all thing from Parrot
-        super().__init__(name, age);
-
-    def WhoIsIt(self):
-        print("Penguin");
-
-
-d1 = Penguin("Penguin", 30);
-
-d1.WhoIsIt();
-```
-
-### Encapsulation:
-Using OOP in Python, we can restrict access to methods and variables. This prevent data from direct 
-modification which is called encapsulation. In python, we denote private attribute using double underscore as prefix 
-i.e "__" 
-
-```Python
-
-class Computer:
-    def __init__(self):
-        self.__max_price = 90000
-
-    def sell(self):
-        print("Selling price is {}".format(self.__max_price));
-
-    def setPrice(self, amount):
-        self.__max_price = amount;
-
-
-
-dell = Computer();
-
-print(dell.__max_price);
-```
-if I run this programm I got an error. Which is
-	
-	C:\Python3\python.exe C:/Users/PI-SERIES/Desktop/cPython/OOP.py
-	Traceback (most recent call last):
- 	 File "C:/Users/PI-SERIES/Desktop/cPython/OOP.py", line 15, in <module>
-   	 print(dell.__max_price);
-	AttributeError: 'Computer' object has no attribute '__max_price'
-
-	Process finished with exit code 1
-	
-Here it tell us that `Computer` object has no attribute `__max_price`. Thats mean we can not access attribute `__max_price`.
-Because it is a private attribute.
-
-
-### Polymorphism:
-
-Polymorphism simply means that we can call the same method name with parameters, and depending on the parameters, it will
-do different things.
-
-`In OOP style` Polymorphism is an ability to use common interface for multiple data types.
-
-If we see the code below we understand it clearly
-
-```Python
-
-print(5 * 6);
-
-print("RAHUL" * 5);
+<re.Match object; span=(0, 3), match='127'>
+<re.Match object; span=(4, 7), match='002'>
+<re.Match object; span=(8, 11), match='001'>
 ```
 
-Output:
-	
-	30
-	
-	RAHULRAHULRAHULRAHULRAHUL
 
-Here the `print()` is a method which work  in different way depend on the `input data type`.
+----
+Code is here
+----
+
+```python
+import re
+
+txt = 'a123abc vert cyuo rt';
+
+number = '123.456.7890';
 
 
-For int input data (int) the first print function `multiply the two number`.
-But for string input data (string) the second print function `print the string in multiple time`.
+pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d');
 
-So the `print` function change it's work depend on the input data type.
+match = pattern.finditer(number);
 
+for m in match:
+
+    print(m);
+```
+
+Output here: 
+```
+<re.Match object; span=(0, 11), match='123.456.789'>
+```
+
+Code is here
+---
+```python
+import re
+
+'''
+                        t.txt
+-----------------------------------------------------------------------
+    123-345-3456
+    234.567.5436
+
+    456.678.890
+'''
+
+pattern = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d');
+
+
+with open('t.txt', 'r') as f:
+    content = f.read();
+    mattern = pattern.finditer(content);
+
+    for m in mattern:
+        print(m);
+```
+
+Output is here:
+
+```
+<re.Match object; span=(0, 11), match='123-345-345'>
+<re.Match object; span=(13, 24), match='234.567.543'>
+<re.Match object; span=(27, 38), match='456.678.890'>
+```
+
+So in the  `[a-z]` only one character is match of the required string.
+
+If the `t.txt` file is become 
+
+```
+123--345-3456
+234.567.5436
+
+456.678.890
+```
+
+Output will become:
+
+```
+<re.Match object; span=(14, 25), match='234.567.543'>
+<re.Match object; span=(28, 39), match='456.678.890'>
+```
+
+If we want to find a patter that start 9 or 8 then two zero then the code is here:
+---
+
+```python
+import re
+
+'''
+                        t.txt
+-----------------------------------------------------------------------
+    123--345-3456
+    234.567.5436
+    800.230.123
+    456.678.890
+'''
+
+pattern = re.compile(r'[98]00[.]\d\d\d[.]\d\d\d');
+
+
+with open('t.txt', 'r') as f:
+    content = f.read();
+    mattern = pattern.finditer(content);
+
+    for m in mattern:
+        print(m);
+```
+
+Output is here:
+
+```
+<re.Match object; span=(41, 52), match='800.230.123'>
+```
+
+
+##Quantifiers: 
+
+
+|       |              |
+|:-----:|:------------:|
+|   *   |   - 0 or more |
+|+|  - 1 or more |
+|?| - 0 or one|
+|{ 3 }| - Exact Number|
+|{ 3, 4 }| Range of Number ( Minimum, Maximum )|
+
+
+If the `t.txt` file is given by:
+
+```
+ Mr. Smith
+ Mr Smith
+ Ms Smith
+ Mrs. Suzon
+```
+
+and if we find `Mr` in the text there are 2 `Mr` where 
+1. Mr.
+2. Mr
+
+So if we run the code : 
+
+```python
+import re
+
+'''
+                        t.txt
+-----------------------------------------------------------------------
+    Mr. Smith
+    Mr Smith
+    Ms Smith
+    Mrs. Suzon
+    
+'''
+
+with open('t.txt', 'r') as f:
+
+    txt =  f.read();
+
+    match = re.compile(r'Mr\.');
+    pattern = match.finditer(txt);
+
+    for m in pattern:
+        print(m);
+
+```
+
+The output of the code is here:
+````
+<re.Match object; span=(1, 4), match='Mr.'>
+
+````
+
+if we want to print two `Mr` then we write the code here
+
+```python
+import re
+
+'''
+                        t.txt
+-----------------------------------------------------------------------
+    Mr. Smith
+    Mr Smith
+    Ms Smith
+    Mrs. Suzon
+    
+'''
+
+with open('t.txt', 'r') as f:
+
+    txt =  f.read();
+
+    match = re.compile(r'Mr\.?');
+    pattern = match.finditer(txt);
+
+    for m in pattern:
+        print(m);
+
+``` 
+The output is here:
+```
+<re.Match object; span=(1, 4), match='Mr.'>
+<re.Match object; span=(12, 14), match='Mr'>
+<re.Match object; span=(32, 34), match='Mr'>
+```
+
+Now the code is:
+
+```python
+import re
+
+'''
+                        t.txt
+-----------------------------------------------------------------------
+    Mr. Smith
+    Mr Smith
+    Ms Smith
+    Mrs. Suzon
+    
+'''
+
+with open('t.txt', 'r') as f:
+
+    txt =  f.read();
+
+    match = re.compile(r'Mr\.?\s[A-Z]\w+');
+    pattern = match.finditer(txt);
+
+    for m in pattern:
+        print(m);
+
+```
+
+The output is:
+
+```
+<re.Match object; span=(1, 10), match='Mr. Smith'>
+<re.Match object; span=(12, 20), match='Mr Smith'>
+```
+
+The code is here:
+
+```python
+import re
+
+'''
+                        t.txt
+-----------------------------------------------------------------------
+    Mr. Smith
+    Mr Smith
+    Ms Smith
+    Mrs. Suzon
+    
+'''
+
+with open('t.txt', 'r') as f:
+
+    txt =  f.read();
+
+    match = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w+');
+    pattern = match.finditer(txt);
+
+    for m in pattern:
+        print(m);
+```
+
+The output is:
+
+```
+<re.Match object; span=(1, 10), match='Mr. Smith'>
+<re.Match object; span=(12, 20), match='Mr Smith'>
+<re.Match object; span=(22, 30), match='Ms Smith'>
+<re.Match object; span=(32, 42), match='Mrs. Suzon'>
+```
+
+The text file is `t.txt`
+
+```
+saharahul039@gmail.com
+suzonsharma@gmail.com
+Rafid-hassan@gmail.net
+nakib.hassan@gmail.tk
+```
+
+The code is:
+```Python
+import re
+
+with open('t.txt', 'r') as f:
+
+    txt =  f.read();
+
+    match = re.compile(r'[a-zA-Z]+@[a-zA-Z]+\.com');
+    pattern = match.finditer(txt);
+
+    for m in pattern:
+        print(m);
+```
+
+The output is :
+
+````
+<re.Match object; span=(23, 44), match='suzonsharma@gmail.com'>
+````
+
+> The code is here :
+
+```python
+import re
+
+'''
+http://www.facebook.com
+https://www.youtube.com
+http://www.python.com
+https://google.com
+'''
+
+with open('t.txt', 'r') as f:
+
+    txt =  f.read();
+
+    match = re.compile(r'https?://(www\.)?\w+\.com');
+    pattern = match.finditer(txt);
+
+    for m in pattern:
+        print(m);
+```
+
+> The output is:
+
+```
+<re.Match object; span=(0, 23), match='http://www.facebook.com'>
+<re.Match object; span=(24, 47), match='https://www.youtube.com'>
+<re.Match object; span=(48, 69), match='http://www.python.com'>
+<re.Match object; span=(70, 88), match='https://google.com'>
+```
 
